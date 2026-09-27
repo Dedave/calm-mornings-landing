@@ -2,21 +2,22 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Calm Mornings | Visual Routine System for Kids",
+  title: "Calm Mornings | The 14-Day School Morning Reset",
   description:
-    "A colorful printable visual routine system designed to help families make busy mornings easier to follow. Includes 36 illustrated routine cards, boards, trackers, checklists and Parent Guide.",
+    "A printable visual routine system designed to help families build easier-to-follow school mornings with 36 illustrated routine cards, boards, checklists, trackers and a Parent Guide.",
   openGraph: {
     type: "website",
-    title: "Calm Mornings | Visual Routine System for Kids",
+    title: "Calm Mornings | The 14-Day School Morning Reset",
     description:
-      "A colorful printable visual routine system designed to help families make busy mornings easier to follow. Includes 36 illustrated routine cards, boards, trackers, checklists and Parent Guide.",
+      "A printable visual routine system designed to help families build easier-to-follow school mornings with 36 illustrated routine cards, boards, checklists, trackers and a Parent Guide.",
     images: ["/assets/hero-collage.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Calm Mornings | Visual Routine System for Kids",
+    images: ["/assets/hero-collage.webp"],
+    title: "Calm Mornings | The 14-Day School Morning Reset",
     description:
-      "A colorful printable visual routine system designed to help families make busy mornings easier to follow.",
+      "A printable visual routine system designed to help families build easier-to-follow school mornings with 36 illustrated routine cards, boards, checklists, trackers and a Parent Guide.",
   },
 };
 

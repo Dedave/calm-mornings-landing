@@ -21,7 +21,7 @@ function hasGtag() {
 function trackPurchaseCTA(source) {
   // Meta Pixel
   if (hasFbq()) {
-    window.fbq("track", "InitiateCheckout", {
+    window.fbq("trackCustom", "SelarOutboundClick", {
       content_name: "Calm Mornings - Visual Routine System",
       content_type: "product",
       value: 7,
@@ -32,8 +32,8 @@ function trackPurchaseCTA(source) {
 
   // Google Analytics / Google Ads — currently inactive
   // because no IDs/scripts have been configured yet.
-  if (hasGtag()) {
-    window.gtag("event", "begin_checkout", {
+  if (hasGtag() && (CONFIG.gaMeasurementId || CONFIG.googleAdsId)) {
+    window.gtag("event", "selar_outbound_click", {
       currency: "USD",
       value: 7,
       items: [
@@ -55,7 +55,7 @@ function trackPurchaseCTA(source) {
 /**
  * Handles the landing page's client-side interactions:
  *
- * - Tracks purchase CTA clicks as Meta InitiateCheckout
+ * - Tracks purchase CTA clicks as the custom Meta SelarOutboundClick event
  * - Controls sticky mobile CTA visibility
  * - Sets the footer year
  * - Keeps only one FAQ accordion open at a time
@@ -64,7 +64,7 @@ function trackPurchaseCTA(source) {
  * initialization in app/layout.js.
  *
  * IMPORTANT:
- * InitiateCheckout does NOT mean a purchase occurred.
+ * An outbound click is not a confirmed checkout initiation.
  * Purchase must only be fired after reliable confirmation
  * of a completed transaction.
  */

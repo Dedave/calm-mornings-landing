@@ -9,7 +9,7 @@
   --paper: #fffdf8;
   --ink: #1f2a47;
   --ink-soft: #545f7e;
-  --ink-faint: #8890a6;
+  --ink-faint: #626d86;
 
   --yellow: #ffc53d;
   --yellow-deep: #f0a516;
@@ -446,7 +446,7 @@ section { position: relative; }
   gap: 18px;
   margin-top: 8px;
 }
-@media (min-width: 760px) { .steps-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 760px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
 
 .step-card {
   background: var(--white);
@@ -708,3 +708,43 @@ section { position: relative; }
 .sticky-cta .btn { padding: 13px 22px; font-size: 14.5px; white-space: nowrap; }
 
 @media (min-width: 860px) { .sticky-cta { display: none; } }
+
+/* School morning reset — extends the existing palette and cards. */
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 12px; }
+.product-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.launch-price { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.launch-label { margin-top: 24px; font-weight: 600; }
+.offer-price { margin-top: 0; }
+.btn-primary { color: var(--ink); }
+.hero-badge, .step-num { color: var(--ink); }
+.brand-word small { color: var(--ink-soft); }
+.reset-section { background: var(--cream-deep); }
+.reset-grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.reset-card { background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--sky); border-radius: var(--radius-md); padding: 26px 22px; box-shadow: var(--shadow-card); }
+.reset-card:nth-child(2) { border-top-color: var(--pink); }
+.reset-card:nth-child(3) { border-top-color: var(--green); }
+.reset-card:nth-child(4) { border-top-color: var(--yellow); }
+.day-label { display: inline-block; border-radius: var(--radius-pill); background: var(--cream-deep); padding: 6px 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 18px; }
+.reset-card h3 { font-size: 21px; }
+.reset-card p { margin-top: 12px; color: var(--ink-soft); font-size: 15px; }
+.section-note { max-width: 680px; margin: 26px auto 0; text-align: center; font-size: 14px; color: var(--ink-soft); }
+.comparison-grid { display: grid; gap: 20px; max-width: 900px; margin: auto; }
+.comparison-card { padding: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); }
+.comparison-card:last-child { background: #e9f5ed; }
+.comparison-card h3 { font-size: 20px; }
+.comparison-card ul { padding-left: 20px; margin: 20px 0 0; display: grid; gap: 12px; color: var(--ink-soft); }
+.guide-title { font-family: var(--font-display); font-weight: 700; }
+.guide-caption { position: relative; z-index: 2; margin-top: 24px; font-size: 12px; text-align: center; color: var(--ink-soft); }
+.objections .section-head { margin-bottom: 0; }
+.final-product { font-family: var(--font-display); font-weight: 700; font-size: 24px; margin-top: 24px; }
+.final-product span { display: block; font-size: 17px; color: var(--ink-soft); }
+.included-list { list-style: none; padding: 0; margin: 20px auto; max-width: 580px; display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; font-size: 14px; }
+.included-list li::before { content: "✓ "; color: var(--ink); }
+.sticky-cta { visibility: hidden; }
+.sticky-cta.visible { visibility: visible; }
+.sticky-cta .price { display: none; }
+.sticky-cta .btn { width: 100%; white-space: normal; text-align: center; }
+@media (min-width: 640px) { .reset-grid, .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .reset-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 400px) { .btn-header { font-size: 12px; padding: 12px; max-width: 150px; text-align: center; } }
+@media (min-width: 640px) and (max-width: 859px) { .site-footer { padding-bottom: 100px; } }
