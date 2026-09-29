@@ -3,8 +3,8 @@
 import { useEffect } from "react";
 
 const CONFIG = {
-  googleAdsId: null, // e.g. "AW-123456789"
-  gaMeasurementId: null, // e.g. "G-XXXXXXX"
+  googleAdsId: null,
+  gaMeasurementId: null,
   checkoutUrl: "https://selar.com/0m73087f66",
 };
 
@@ -16,10 +16,9 @@ function hasGtag() {
   return typeof window !== "undefined" && typeof window.gtag === "function";
 }
 
-// CTA click = intent to purchase, NOT a confirmed purchase.
-// Never fire Purchase from a CTA click.
+// CTA click = intent to leave the landing page for Selar.
+// This is not InitiateCheckout and not Purchase.
 function trackPurchaseCTA(source) {
-  // Meta Pixel
   if (hasFbq()) {
     window.fbq("trackCustom", "SelarOutboundClick", {
       content_name: "Calm Mornings - Visual Routine System",
@@ -30,18 +29,16 @@ function trackPurchaseCTA(source) {
     });
   }
 
-  // Google Analytics / Google Ads — currently inactive
-  // because no IDs/scripts have been configured yet.
   if (hasGtag() && (CONFIG.gaMeasurementId || CONFIG.googleAdsId)) {
     window.gtag("event", "selar_outbound_click", {
       currency: "USD",
       value: 7,
+      source,
       items: [
         {
           item_name: "Calm Mornings - Visual Routine System",
         },
       ],
-      source,
     });
 
     if (CONFIG.googleAdsId) {
@@ -52,55 +49,49 @@ function trackPurchaseCTA(source) {
   }
 }
 
-/**
- * Handles the landing page's client-side interactions:
- *
- * - Tracks purchase CTA clicks as the custom Meta SelarOutboundClick event
- * - Controls sticky mobile CTA visibility
- * - Sets the footer year
- * - Keeps only one FAQ accordion open at a time
- *
- * PageView and ViewContent are handled by the Meta Pixel
- * initialization in app/layout.js.
- *
- * IMPORTANT:
- * An outbound click is not a confirmed checkout initiation.
- * Purchase must only be fired after reliable confirmation
- * of a completed transaction.
- */
 export default function SiteInteractions() {
   useEffect(() => {
-    // -----------------------------------------
-    // PURCHASE CTA TRACKING
-    // -----------------------------------------
-
     function onClick(event) {
       const target = event.target;
 
-      if (!(target instanceof Element)) {
-        return;
-      }
+      if (!(target instanceof Element)) return;
 
-      const link = target.closest("[data-cta]");
+      const link = target.closest("a[data-cta]");
 
-      if (!link) {
-        return;
-      }
+      if (!link) return;
 
       const source = link.getAttribute("data-cta") || "unknown";
 
+      // Keep normal behaviour for opening a new tab or modified clicks.
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        link.target === "_blank"
+      ) {
+        trackPurchaseCTA(source);
+        return;
+      }
+
+      // Let the Pixel event begin sending before navigation to Selar.
+      event.preventDefault();
+
+      const destination = link.href || CONFIG.checkoutUrl;
+
       trackPurchaseCTA(source);
+
+      window.setTimeout(() => {
+        window.location.assign(destination);
+      }, 250);
     }
 
     document.addEventListener("click", onClick);
 
-    // -----------------------------------------
-    // STICKY MOBILE CTA
-    // -----------------------------------------
-
     const stickyCta = document.getElementById("stickyCta");
     const hero = document.querySelector(".hero");
-
     let showAfter = 0;
 
     function computeThreshold() {
@@ -113,36 +104,22 @@ export default function SiteInteractions() {
     function onScroll() {
       if (!stickyCta) return;
 
-      if (window.scrollY > showAfter) {
-        stickyCta.classList.add("visible");
-      } else {
-        stickyCta.classList.remove("visible");
-      }
+      stickyCta.classList.toggle("visible", window.scrollY > showAfter);
     }
 
     if (stickyCta && hero) {
       window.addEventListener("resize", computeThreshold);
-      window.addEventListener("scroll", onScroll, {
-        passive: true,
-      });
+      window.addEventListener("scroll", onScroll, { passive: true });
 
       computeThreshold();
       onScroll();
     }
-
-    // -----------------------------------------
-    // FOOTER YEAR
-    // -----------------------------------------
 
     const yearEl = document.getElementById("year");
 
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear().toString();
     }
-
-    // -----------------------------------------
-    // FAQ ACCORDION
-    // -----------------------------------------
 
     const faqItems = document.querySelectorAll(".faq-item");
 
@@ -162,13 +139,8 @@ export default function SiteInteractions() {
       item.addEventListener("toggle", onToggle);
     });
 
-    // -----------------------------------------
-    // CLEANUP
-    // -----------------------------------------
-
     return () => {
       document.removeEventListener("click", onClick);
-
       window.removeEventListener("resize", computeThreshold);
       window.removeEventListener("scroll", onScroll);
 

@@ -32,18 +32,19 @@ const moreList = [
   "19-Page Parent Guide (A4 & US Letter)",
 ];
 
-// The reset is an on-page practice framework, not an additional download.
 const resetStages = [
   { days: "Days 1–3", title: "Build the routine", desc: "Choose the steps that fit your family's morning and create your child's visual routine." },
   { days: "Days 4–7", title: "Practise together", desc: "Walk through the routine together and help your child learn what each visual step means." },
   { days: "Days 8–10", title: "Step back gradually", desc: "Give your child opportunities to check the visual routine before giving another verbal reminder." },
   { days: "Days 11–14", title: "Make it repeatable", desc: "Keep using the routine consistently, notice where mornings still get stuck and adjust the system to fit your family." },
 ];
+
 const steps = [
   { num: 1, title: "Print", desc: "Download and print the routine tools you want to use." },
   { num: 2, title: "Build", desc: "Choose the cards that match your child's actual morning and arrange the routine." },
   { num: 3, title: "Practise", desc: "Use the routine consistently and gradually encourage your child to check what comes next." },
 ];
+
 const audience = [
   { icon: "✓", text: "You find yourself repeating the same morning instructions" },
   { icon: "✓", text: "Your child regularly asks what they should do next" },
@@ -52,29 +53,83 @@ const audience = [
   { icon: "✓", text: "You want practical tools rather than another complicated system" },
   { icon: "✓", text: "You want something you can print and adapt to your family" },
 ];
-const included = ["36 Illustrated Routine Cards", "Routine Boards", "Checklists", "Trackers", "Reward Cards", "19-Page Parent Guide"];
+
+const included = [
+  "36 Illustrated Routine Cards",
+  "Routine Boards",
+  "Checklists",
+  "Trackers",
+  "Reward Cards",
+  "19-Page Parent Guide",
+];
+
 const comparison = [
-  { title: "Without a clear visual routine", items: ["Repeating the same instructions", "Children asking what comes next", "Forgotten morning tasks", "Last-minute searching", "Parents carrying the whole routine mentally"] },
-  { title: "With a routine they can see", items: ["Morning steps displayed visually", "A predictable order to follow", "Easier prompts such as ‘check your routine’", "Children can see what comes next", "A reusable system for school mornings"] },
+  {
+    title: "Without a clear visual routine",
+    items: [
+      "Repeating the same instructions",
+      "Children asking what comes next",
+      "Forgotten morning tasks",
+      "Last-minute searching",
+      "Parents carrying the whole routine mentally",
+    ],
+  },
+  {
+    title: "With a routine they can see",
+    items: [
+      "Morning steps displayed visually",
+      "A predictable order to follow",
+      "Easier prompts such as ‘check your routine’",
+      "Children can see what comes next",
+      "A reusable system for school mornings",
+    ],
+  },
 ];
 
 const faqs = [
-  { q: "How does the 14-Day Reset work?", a: "Use the four stages on this page with your Calm Mornings tools: build the routine on days 1–3, practise together on days 4–7, step back gradually on days 8–10, and adjust for repeatability on days 11–14. This is a suggested implementation framework, not an extra downloadable workbook or a guarantee of results. Every family can move at its own pace." },
-  { q: "Do I have to use all 36 cards?", a: "No. Choose only the cards that match your child's morning. You can begin with a few relevant steps and adjust as you practise." },
-  { q: "Can I create a routine that fits my family?", a: "Yes. Choose relevant illustrated cards and arrange them in the order that fits your household. The different routine boards give you options for displaying your sequence." },
-  { q: "Do I need special materials?", a: "You need a way to print the pages and scissors if you want to cut out the routine cards. Choose the pages you want to use; no physical materials are shipped with this digital download." },
-  { q: "What happens after I purchase, and how do I access the files?", a: "Your purchase is handled through Selar. After completing your purchase, follow Selar's download instructions to access your Calm Mornings digital files. You can then print the pages you want to use." },
+  {
+    q: "How does the 14-Day Reset work?",
+    a: "Use the four stages on this page with your Calm Mornings tools: build the routine on days 1–3, practise together on days 4–7, step back gradually on days 8–10, and adjust for repeatability on days 11–14. This is a suggested implementation framework, not an extra downloadable workbook or a guarantee of results. Every family can move at its own pace.",
+  },
+  {
+    q: "Do I have to use all 36 cards?",
+    a: "No. Choose only the cards that match your child's morning. You can begin with a few relevant steps and adjust as you practise.",
+  },
+  {
+    q: "Can I create a routine that fits my family?",
+    a: "Yes. Choose relevant illustrated cards and arrange them in the order that fits your household. The different routine boards give you options for displaying your sequence.",
+  },
+  {
+    q: "Do I need special materials?",
+    a: "You need a way to print the pages and scissors if you want to cut out the routine cards. Choose the pages you want to use; no physical materials are shipped with this digital download.",
+  },
+  {
+    q: "What happens after I purchase, and how do I access the files?",
+    a: "Your purchase is handled through Selar. After completing your purchase, follow Selar's download instructions to access your Calm Mornings digital files. You can then print the pages you want to use.",
+  },
   {
     q: "What exactly do I receive?",
     a: "You receive the complete Calm Mornings digital download: 36 illustrated routine cards, the 5-step, 6-step and 8-step morning routine boards, a two-child morning routine, a First → Then board, a Morning Choice board, a Weekly Morning Tracker, Reward & Achievement Cards, a Weekend Morning Routine, a Get Ready Checklist, a Daily Morning Routine page, individual printable PNG pages, and a 19-page Parent Guide in both A4 and US Letter sizes.",
   },
   { q: "Is this a physical product?", a: "No. Calm Mornings is a digital download. Nothing will be shipped." },
-  { q: "What age is it for?", a: "It was designed with families of young children in mind. Parents can choose the cards and boards that best suit their child's routine." },
+  {
+    q: "What age is it for?",
+    a: "It was designed with families of young children in mind. Parents can choose the cards and boards that best suit their child's routine.",
+  },
   { q: "Can I reuse the printables?", a: "Yes. You can print pages as often as you like for your own household use." },
   { q: "Can I use it for more than one child?", a: "Yes, within the buyer's household." },
-  { q: "Can I resell or share the files?", a: "No. Personal household use only. Files may not be resold, redistributed, shared, or re-uploaded." },
-  { q: "Is this therapy or medical advice?", a: "No. Calm Mornings is an organizational resource for families and is not medical, developmental, behavioral, or therapeutic advice." },
-  { q: "Do I receive a personalized version?", a: "No. This purchase is the standard Calm Mornings edition. Personalized name/theme editions are not included and may be offered separately." },
+  {
+    q: "Can I resell or share the files?",
+    a: "No. Personal household use only. Files may not be resold, redistributed, shared, or re-uploaded.",
+  },
+  {
+    q: "Is this therapy or medical advice?",
+    a: "No. Calm Mornings is an organizational resource for families and is not medical, developmental, behavioral, or therapeutic advice.",
+  },
+  {
+    q: "Do I receive a personalized version?",
+    a: "No. This purchase is the standard Calm Mornings edition. Personalized name/theme editions are not included and may be offered separately.",
+  },
 ];
 
 export default function Home() {
@@ -91,6 +146,7 @@ export default function Home() {
               <small>PUBLISHING</small>
             </span>
           </a>
+
           <a href={CHECKOUT_URL} className="btn btn-header" data-cta="header">
             Start the 14-Day Reset
           </a>
@@ -98,7 +154,6 @@ export default function Home() {
       </header>
 
       <main>
-        {/* Hero */}
         <section className="hero">
           <div className="wrap">
             <div className="hero-copy">
@@ -117,9 +172,11 @@ export default function Home() {
 
               <div className="hero-cta">
                 <p className="launch-price">Launch Price: $7</p>
+
                 <a href={CHECKOUT_URL} className="btn btn-primary btn-block" data-cta="hero">
                   Start the 14-Day Reset
                 </a>
+
                 <p className="btn-sub">
                   <span>Instant Digital Download</span>
                   <span>•</span>
@@ -144,7 +201,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Problem */}
         <section className="problem section-pad">
           <div className="wrap">
             <div className="section-head">
@@ -160,22 +216,19 @@ export default function Home() {
             </div>
 
             <div className="problem-copy">
-              <p className="accent-line">When children rely on verbal reminders for every step, mornings can quickly become exhausting for everyone.</p>
-              <p>
-                Calm Mornings turns those repeated instructions into a visual routine children can see and follow
-                one step at a time.
+              <p className="accent-line">
+                When children rely on verbal reminders for every step, mornings can quickly become exhausting for everyone.
               </p>
+              <p>Calm Mornings turns those repeated instructions into a visual routine children can see and follow one step at a time.</p>
             </div>
           </div>
         </section>
 
-        {/* Sequence */}
         <section className="sequence section-pad">
           <div className="wrap">
             <div className="section-head">
               <h2>Meet the Calm Mornings System</h2>
-              <p>More than something you read once: visual routine tools and a practical Parent Guide to help you
-                create, introduce and practise a repeatable morning routine.</p>
+              <p>More than something you read once: visual routine tools and a practical Parent Guide to help you create, introduce and practise a repeatable morning routine.</p>
               <p>36 illustrated routine cards, routine boards, checklists, trackers, reward cards and a 19-page Parent Guide.</p>
             </div>
 
@@ -186,6 +239,7 @@ export default function Home() {
                     <Image src={step.src} alt={step.alt} width={360} height={246} sizes="(max-width: 639px) 30vw, 120px" />
                     <span>{step.label}</span>
                   </div>
+
                   {i < sequenceSteps.length - 1 && (
                     <div className="sequence-arrow" aria-hidden="true">
                       →
@@ -202,9 +256,9 @@ export default function Home() {
             <div className="section-head">
               <p className="eyebrow">A little practice, one morning at a time</p>
               <h2>Your 14-Day School Morning Reset</h2>
-              <p>You don’t need to change everything overnight. Use the Calm Mornings tools to introduce the routine
-                gradually, practise it together and give your child more opportunities to follow the next step visually.</p>
+              <p>You don’t need to change everything overnight. Use the Calm Mornings tools to introduce the routine gradually, practise it together and give your child more opportunities to follow the next step visually.</p>
             </div>
+
             <ol className="reset-grid">
               {resetStages.map((stage) => (
                 <li className="reset-card" key={stage.days}>
@@ -214,28 +268,38 @@ export default function Home() {
                 </li>
               ))}
             </ol>
-            <p className="section-note">A framework for practice, not a deadline for independence or calm.
-              Take the time your family needs; these stages use the included tools, with no extra workbook required.</p>
+
+            <p className="section-note">
+              A framework for practice, not a deadline for independence or calm. Take the time your family needs; these stages use the included tools, with no extra workbook required.
+            </p>
           </div>
         </section>
 
         <section className="comparison section-pad">
           <div className="wrap">
-            <div className="section-head"><h2>A clearer way to see what comes next</h2></div>
+            <div className="section-head">
+              <h2>A clearer way to see what comes next</h2>
+            </div>
+
             <div className="comparison-grid">
               {comparison.map((column) => (
                 <article className="comparison-card" key={column.title}>
                   <h3>{column.title}</h3>
-                  <ul>{column.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                  <ul>
+                    {column.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
                 </article>
               ))}
             </div>
-            <p className="section-note">Every family is different, and routines take practice. These are ways a visual
-              routine can support your morning, not promised outcomes.</p>
+
+            <p className="section-note">
+              Every family is different, and routines take practice. These are ways a visual routine can support your morning, not promised outcomes.
+            </p>
           </div>
         </section>
 
-        {/* Showcase */}
         <section className="showcase section-pad" style={{ background: "var(--cream-deep)" }}>
           <div className="wrap">
             <div className="section-head">
@@ -247,7 +311,13 @@ export default function Home() {
               {showcaseItems.map((item) => (
                 <article className="showcase-card" key={item.title}>
                   <div className="thumb">
-                    <Image src={item.src} alt={item.alt} width={900} height={1350} sizes="(max-width: 639px) 45vw, (max-width: 979px) 30vw, 270px" />
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      width={900}
+                      height={1350}
+                      sizes="(max-width: 639px) 45vw, (max-width: 979px) 30vw, 270px"
+                    />
                   </div>
                   <div className="cap">
                     <h3>{item.title}</h3>
@@ -271,7 +341,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How it works */}
         <section className="how section-pad">
           <div className="wrap">
             <div className="section-head">
@@ -290,7 +359,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Offer */}
         <section className="offer-section section-pad">
           <div className="wrap">
             <div className="offer-card">
@@ -299,10 +367,9 @@ export default function Home() {
                 36 illustrated routine cards • routine boards • trackers • checklists • reward cards • 19-page Parent Guide
               </p>
               <p className="launch-label">Launch Price:</p>
-              <div className="offer-price">
-                <sup>$</sup>7
-              </div>
+              <div className="offer-price"><sup>$</sup>7</div>
               <p className="offer-price-note">One-time purchase • Instant Digital Download</p>
+
               <a href={CHECKOUT_URL} className="btn btn-primary btn-block" data-cta="offer">
                 Start the 14-Day Reset
               </a>
@@ -310,12 +377,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Audience */}
         <section className="audience section-pad">
           <div className="wrap">
             <div className="section-head">
               <h2>Calm Mornings May Be Helpful If...</h2>
             </div>
+
             <ul className="audience-list">
               {audience.map((item) => (
                 <li key={item.text}>
@@ -327,7 +394,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Parent guide */}
         <section className="guide-section section-pad" style={{ background: "var(--cream-deep)" }}>
           <div className="wrap">
             <div className="guide-mock">
@@ -340,6 +406,7 @@ export default function Home() {
                 <div className="rule"></div>
                 <div className="rule"></div>
               </div>
+
               <p className="guide-caption">Illustrative guide mockup</p>
               <div className="guide-badges">
                 <span>A4</span>
@@ -350,10 +417,7 @@ export default function Home() {
 
             <div className="guide-copy">
               <h2>A practical Parent Guide, included</h2>
-              <p>
-                The system also includes a practical Parent Guide to help you set up and use your Calm Mornings
-                routine.
-              </p>
+              <p>The system also includes a practical Parent Guide to help you set up and use your Calm Mornings routine.</p>
               <ul>
                 <li>📄 19-page Parent Guide — A4</li>
                 <li>📄 19-page Parent Guide — US Letter</li>
@@ -367,14 +431,12 @@ export default function Home() {
           <div className="wrap">
             <div className="section-head">
               <h2>“But We’ve Tried Routine Charts Before...”</h2>
-              <p>Calm Mornings is designed as more than a single generic chart. Choose relevant illustrated cards,
-                create a routine that matches your household and use the Parent Guide to introduce the system gradually.</p>
+              <p>Calm Mornings is designed as more than a single generic chart. Choose relevant illustrated cards, create a routine that matches your household and use the Parent Guide to introduce the system gradually.</p>
               <p>Start with the steps you actually need. Practise together, then adjust what isn’t working for your family.</p>
             </div>
           </div>
         </section>
 
-        {/* FAQ */}
         <section className="faq section-pad">
           <div className="wrap">
             <div className="section-head">
@@ -395,7 +457,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Final CTA */}
         <section className="final-cta section-pad">
           <div className="wrap">
             <div className="final-cta-visual">
@@ -407,14 +468,21 @@ export default function Home() {
                 sizes="240px"
               />
             </div>
+
             <h2>Tomorrow Morning Can Have a Clearer Plan.</h2>
             <p className="lede">Give your family a visual routine you can build, practise and reuse — one morning at a time.</p>
             <p className="final-product">Calm Mornings<span>The 14-Day School Morning Reset</span></p>
-            <ul className="included-list">{included.map((item) => <li key={item}>{item}</li>)}</ul>
+            <ul className="included-list">
+              {included.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
             <div className="final-price">Launch Price: $7</div>
+
             <a href={CHECKOUT_URL} className="btn btn-primary" data-cta="final">
               Start the 14-Day Reset
             </a>
+
             <p className="btn-sub">
               <span>Instant Digital Download</span>
             </p>
@@ -431,15 +499,13 @@ export default function Home() {
               <small>PUBLISHING</small>
             </span>
           </a>
+
           <p className="disclaimer">
-            Calm Mornings is an organizational resource for families and is not medical, developmental, behavioral or
-            therapeutic advice. For the purchaser&apos;s household use only — files may not be resold, redistributed,
-            shared, or re-uploaded.
+            Calm Mornings is an organizational resource for families and is not medical, developmental, behavioral or therapeutic advice. For the purchaser&apos;s household use only — files may not be resold, redistributed, shared, or re-uploaded.
           </p>
+
           <p className="legal">
-            <span>
-              © <span id="year"></span> LumaNest Publishing
-            </span>
+            <span>© <span id="year"></span> LumaNest Publishing</span>
           </p>
         </div>
       </footer>
@@ -448,6 +514,7 @@ export default function Home() {
         <span className="price">
           Calm Mornings<strong>$7</strong>
         </span>
+
         <a href={CHECKOUT_URL} className="btn btn-primary" data-cta="sticky">
           Start the 14-Day Reset — $7
         </a>
